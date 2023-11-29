@@ -1,0 +1,13 @@
+.reminder-message {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .reminder-message.show {
+    opacity: 1;
+    background-color: #67c7e5;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  

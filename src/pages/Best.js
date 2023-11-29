@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../components/Layouts/Header';
 
 const Best = () => {
+  const [disease,setDisease] = useState('');
   const diseaseBest = {
     "COVID-19": ["Hospital A", "Hospital B", "Hospital C"],
     "Influenza": ["Hospital D", "Hospital E"],
@@ -31,19 +32,24 @@ const Best = () => {
     "Crohn's Disease": ["Hospital BB", "Hospital BC"],
     "Ulcerative Colitis": ["Hospital BD", "Hospital BE"],
   };
+  
+  let hosp = '';
 
-  const covidHospitals = diseaseBest["COVID-19"];
+  const handleclick=()=>{
+    hosp = diseaseBest[`${disease}`];
+    alert(hosp);
+  }
 
   return (
     <div>
       <Header/>
-      <h1>Hospital Map</h1>
-      <form>
+      <h2 className="best-form-title">Find hospitals which have the solution to your problem</h2>
+      <form className="best-form">
   <div className="form-best mb-3">
     <label for="exampleInputEmail1" className="form-label">Enter the disease</label>
-    <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
+    <input onChange={(e)=>setDisease(e.target.value)} value={disease} type="string" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"/>
   </div>
-  <button type="submit" className="btn btn-primary">Submit</button>
+  <button onClick={handleclick} type="submit" className="best-submit btn btn-primary">Submit</button>
 </form>
     </div>
   );

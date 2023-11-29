@@ -12,15 +12,22 @@ import Nearby from "./pages/Nearby.js";
 import Reminder from "./pages/Reminder.js";
 import Status from "./pages/Status.js";
 import Register from "./pages/Register.js";
+import PathfindingVisualizer from "./PathfindingVisualizer/PathfindingVisualizer.js";
+import IndexPage from "./pages/IndexPage.js";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Layout/>}/>
+        <Route path="/" index element={<IndexPage/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
         <Route path="/best" element={<Best/>}/>
+        <Route path="/status" element={<Status/>}/>
+        <Route path="/learn" element={<PathfindingVisualizer/>}/>
+        <Route path="/remind" element={<Reminder/>}/>
+        <Route path="/nearby" element={<Nearby/>}/>
+        <Route path="/blogs" element={<Blogs/>}/>
       </Routes>
     </>
   );
